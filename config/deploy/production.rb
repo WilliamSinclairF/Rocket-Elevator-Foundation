@@ -7,7 +7,7 @@ set :application,     'rocket_prod'
 set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
-set :linked_files, %w{config/database.yml config/dwh_db.yml}
+set :linked_files, %w{config/database.yml config/dwh_db.yml config/secrets.yml}
 
 
 # Don't change these unless you know what you're doing
