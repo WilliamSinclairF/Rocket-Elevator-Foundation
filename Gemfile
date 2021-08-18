@@ -105,11 +105,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 # CAPISTRANO
-  gem 'capistrano', '~> 3.10', require: false
-  gem 'capistrano-rails', '~> 1.4', require: false
-  gem 'capistrano-bundler', '>= 1.1.0'
-  gem 'rvm1-capistrano3', require: false
-  gem 'capistrano3-puma'
+  gem 'capistrano', '~> 3.11.0',        require: false
+  gem 'capistrano-rvm', '~> 0.1.2',     require: false
+  gem 'capistrano-rails', '~> 1.4.0',   require: false
+  gem 'capistrano-bundler', '~> 1.3.0', require: false
+  gem 'capistrano3-puma', '~> 3.1.1',   require: false
 end
 
 group :test do
