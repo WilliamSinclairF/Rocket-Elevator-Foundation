@@ -1,6 +1,6 @@
 # Change these
 # By default your port will be 22
-server '52.15.103.92', port: 22, roles: [:web, :app, :db], primary: true
+server '3.142.225.45', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'https://github.com/WilliamSinclairF/Rocket-Elevator-Foundation'
 set :application,     'rocket_prod'
