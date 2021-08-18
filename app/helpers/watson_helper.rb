@@ -4,8 +4,10 @@ module WatsonHelper
   include IBMWatson
   include ZendeskHelper
   def greeting_message
+    begin
+    api_key = ENV['WATSON_API_KEY'] || 'no api key'
     authenticator =
-      Authenticators::IamAuthenticator.new(apikey: ENV['WATSON_API_KEY'])
+      Authenticators::IamAuthenticator.new(apikey: api_key)
     text_to_speech = TextToSpeechV1.new(authenticator: authenticator)
     text_to_speech.service_url = "#{ENV['WATSON_URL']}"
 
@@ -36,7 +38,6 @@ You currently have #{lead_count} leads in your contact requests.
 Stay hydrated and have a great day."
 
     file_location = "public/uploads/user/#{current_user.id}"
-    begin
       FileUtils.mkdir_p file_location
       File.open("#{file_location}/greetings.wav", 'wb') do |audio_file|
         response =
@@ -50,8 +51,8 @@ Stay hydrated and have a great day."
         u.greeting_message = audio_file
         u.save
       end
-    rescue IBMWatson::ApiException => ex
+  end
+      rescue IBMWatson::ApiException => ex
       print "Method failed with status code #{ex.code}: #{ex.error}"
     end
-  end
 end

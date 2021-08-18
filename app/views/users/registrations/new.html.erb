@@ -1,6 +1,4 @@
-<% provide :head_tags do %>
-  <%= include_recaptcha_js %>
-<% end %>
+
 <section class="pt-10 pb-10">
   <div class="container">
     <div class="text-center">
@@ -8,11 +6,8 @@
         <h1 class="arrow-top fw-600">Sign Up</h1>
       </div>
     </div>
-    <%= content_for :recaptcha_js do %>
-      <%= include_recaptcha_js %>
-    <% end %>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= recaptcha_action('user') %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <form class="form-signin d-flex justify-content-center flex-wrap">
         <div class="form-div field mx-auto mb-25" style='width: 60%;'>

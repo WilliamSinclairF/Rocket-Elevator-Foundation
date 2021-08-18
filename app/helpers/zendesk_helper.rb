@@ -24,7 +24,7 @@ module ZendeskHelper
     begin
       connection =
         Excon.new(
-          "#{ENV['ZD_URL']}/api/v2/tickets.json",
+          "https://www.insert_zendesk_url_here.com/api/v2/tickets.json",
           debug_request: true, debug_response: true
         )
       connection.request(

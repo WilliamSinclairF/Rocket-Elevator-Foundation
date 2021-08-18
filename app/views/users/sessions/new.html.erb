@@ -1,9 +1,4 @@
-<% provide :head_tags do %>
-  <%= include_recaptcha_js %>
-<% end %>
-<%= content_for :recaptcha_js do %>
-  <%= include_recaptcha_js %>
-<% end %>
+
 <section class="pt-10 pb-10" style="height: 100%;">
   <div class="container">
     <div class="text-center">
@@ -12,7 +7,6 @@
       </div>
     </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= recaptcha_action('user') %>
       <form class="form-signin d-flex justify-content-center flex-wrap">
         <div class="form-div field mx-auto mb-25" style='width: 60%;'>
           <%= f.email_field :email, autocomplete: "off", class: 'no-box', value: '' %>

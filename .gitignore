@@ -51,3 +51,4 @@ public/uploads
 !.elasticbeanstalk/*.global.yml
 
 secrets.yml
+shared

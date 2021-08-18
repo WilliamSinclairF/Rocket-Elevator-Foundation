@@ -11,7 +11,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= yield(:head_tags) %>
-    <%= include_recaptcha_js %>
   </head>
   <body class="smoothscroll enable-animation">
     <% if !current_page?(addresses_path) %>

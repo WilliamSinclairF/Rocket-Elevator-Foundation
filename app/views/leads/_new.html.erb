@@ -1,14 +1,4 @@
-<% provide :head_tags do %>
-  <%= include_recaptcha_js %>
-<% end %>
-<%= content_for :recaptcha_js do %>
-  <%= include_recaptcha_js %>
-<% end %>
-<style>
-  .grecaptcha-badge {
-      visibility: hidden;
-  }
-</style>
+
 <section id="contact">
   <div class="container">
     <div class="col-12 text-center m-10">
@@ -50,12 +40,6 @@
             <label class="custom-file-label" for="fileupload">Attach file</label>
           </div>
         </div>
-      </div>
-      <div class="col-12 text-center mb-3 mt-6">
-        <small class="text-center">This site is protected by reCAPTCHA and the Google
-          <a href="https://policies.google.com/privacy">Privacy Policy</a> and
-          <a href="https://policies.google.com/terms">Terms of Service</a> apply.</small>
-        <%= recaptcha_action('lead') %>
       </div>
       <div class="form-row d-flex justify-content-center m-10">
         <%= form_lead.button :submit, 'Send Message', class: 'btn btn-lg btn-info' %>

@@ -10,16 +10,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    if NewGoogleRecaptcha.human?(
-         params[:new_google_recaptcha_token],
-         'user',
-         NewGoogleRecaptcha.minimum_score,
-         resource
-       )
-      super
-    else
-      render :new
-    end
+    super
   end
 
   # DELETE /resource/sign_out
