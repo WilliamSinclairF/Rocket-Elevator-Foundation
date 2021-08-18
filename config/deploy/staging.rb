@@ -1,12 +1,14 @@
-# Change these
 # By default your port will be 22
-server 'ec2-52-15-103-92.us-east-2.compute.amazonaws.com', port: 22, roles: [:web, :app, :db], primary: true
+server 'YOUR_SERVER_IP', port: YOUR_PORT, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'https://github.com/WilliamSinclairF/Rocket-Elevator-Foundation'
-set :application,     'rocket_prod'
+set :repo_url,        'YOUR_GIT_URL'
+set :application,     'YOUR_APP_NAME_staging'
 set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
+
+set :branch,        :staging
+set :port, 3000
 
 # Don't change these unless you know what you're doing
 set :pty,             true
@@ -26,7 +28,6 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 
 ## Defaults:
 # set :scm,           :git
-# set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
